@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Lev | Performance Digital & Portfólio</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="https://wa.me/54993243670" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <header class="header">
+        <div class="container nav-flex">
+            <div class="logo">LOOP<span>LEV</span></div>
+            <nav class="menu">
+                <a href="#fluxo">Como Funciona</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#faq">Dúvidas</a>
+            </nav>
+            <a href="https://wa.me/54993243670" class="btn-nav">Falar com Consultor</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="badge">Especialistas em Escala Digital</span>
+            <h1>Sua empresa no <span class="gradient-text">próximo nível</span></h1>
+            <p>Criamos estruturas digitais de alta performance. O envio de arquivos e gestão é feito pela página, com negociação direta e segura via WhatsApp.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn-primary">Ver Projetos Realizados</a>
+                <a href="https://wa.me/54993243670" class="btn-secondary">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="fluxo" class="fluxo-trabalho">
+        <div class="container">
+            <h2 class="title-center">Simples, Rápido e Profissional</h2>
+            <div class="envio-grid">
+                <div class="envio-card">
+                    <span class="step-num">01</span>
+                    <h4>Escolha o Modelo</h4>
+                    <p>Navegue pelo nosso portfólio e selecione a estrutura que melhor atende sua empresa.</p>
+                </div>
+                <div class="envio-card">
+                    <span class="step-num">02</span>
+                    <h4>Ajuste via WhatsApp</h4>
+                    <p>Conversamos sobre os detalhes, prazos e realizamos o fechamento do pagamento direto conosco.</p>
+                </div>
+                <div class="envio-card">
+                    <span class="step-num">03</span>
+                    <h4>Envio pela Página</h4>
+                    <p>Toda a entrega do projeto e gestão dos arquivos ocorre de forma organizada aqui na plataforma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-premium">
+        <div class="container">
+            <h2 class="title-left">Projetos de Alto Impacto</h2>
+            <div class="magazord-grid">
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="https://api.microlink.io/?url=https://sebosoler.com&screenshot=true&embed=screenshot.url" alt="Sebo Soler">
+                    </div>
+                    <div class="case-content">
+                        <span class="tag">E-commerce de Livros</span>
+                        <h3>Sebo Soler</h3>
+                        <p>Catálogo inteligente com busca avançada e design focado em usabilidade.</p>
+                        <a href="https://wa.me/54993243670?text=Olá! Gostaria de um orçamento para um site estilo o Sebo Soler" class="btn-case-whats">Orçamento via Whats →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="title-center">Perguntas Frequentes</h2>
+            <div class="faq-list">
+                <details>
+                    <summary>Como recebo meu site?</summary>
+                    <p>Após o fechamento via WhatsApp, você receberá o acesso e todos os arquivos diretamente pela nossa área de envio na página.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">LOOP<span>LEV</span></div>
+                <p>O futuro digital da sua empresa começa aqui. 📱 (54) 99324-3670</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chat-launcher" class="chat-launcher" onclick="toggleChat()" style="display: none;">
+        <span>💬 IA</span>
+    </div>
+
+    <div id="ai-chat" class="ai-chat-box">
+        <div class="chat-header">
+            <span>🤖 Assistente Loop Lev</span>
+            <button onclick="toggleChat()" class="btn-close-chat">✕</button>
+        </div>
+        <div id="chat-window" class="chat-window">
+            <p class="ai-msg">Olá! Pergunte sobre nossos serviços ou prazos.</p>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Digite sua dúvida...">
+            <button onclick="enviarParaIA()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        // FUNÇÃO PARA ABRIR/FECHAR O CHAT
+        function toggleChat() {
+            const chatBox = document.getElementById('ai-chat');
+            const launcher = document.getElementById('chat-launcher');
+
+            if (chatBox.style.display !== "none") {
+                chatBox.style.display = "none";
+                launcher.style.display = "flex";
+            } else {
+                chatBox.style.display = "flex";
+                launcher.style.display = "none";
+            }
+        }
+
+        // FUNÇÃO PARA ENVIAR PERGUNTA AO PYTHON
+        async function enviarParaIA() {
+            const input = document.getElementById('chat-input');
+            const windowChat = document.getElementById('chat-window');
+            const msg = input.value.trim();
+
+            if (!msg) return;
+
+            windowChat.innerHTML += `<div class="user-msg"><strong>Você:</strong> ${msg}</div>`;
+            input.value = '';
+            windowChat.scrollTop = windowChat.scrollHeight;
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/perguntar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ pergunta: msg })
+                });
+
+                const data = await response.json();
+                windowChat.innerHTML += `<div class="ai-msg"><strong>IA:</strong> ${data.resposta}</div>`;
+                windowChat.scrollTop = windowChat.scrollHeight;
+
+            } catch (err) {
+                windowChat.innerHTML += `<div class="ai-msg"><strong>IA:</strong> Servidor offline. Ligue o app.py!</div>`;
+            }
+        }
+
+        // Enviar com Enter
+        document.getElementById('chat-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') enviarParaIA();
+        });
+    </script>
+
+</body>
+</html>
