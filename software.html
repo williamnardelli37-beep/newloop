@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="loop logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software - Engenharia Loop</title>
+    <style>
+        /* BASE DARK MODE */
+        body { 
+            margin: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; 
+            background: #000; 
+            color: #fff; 
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Section Adaptável */
+        .hero-software {
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .hero-software h1 {
+            font-size: 38px; /* Menor no mobile */
+            background: linear-gradient(180deg, #fff 30%, #666 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: #a1a1a6; 
+            font-size: 17px; 
+            margin-top: 10px;
+        }
+
+        /* AMOSTRA EM TEMPO REAL */
+        .live-preview-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .device-frame {
+            width: 100%; /* Ocupa tudo no mobile */
+            max-width: 1000px;
+            height: 400px; /* Menor altura no mobile */
+            background: #1d1d1f;
+            border-radius: 20px;
+            padding: 10px;
+            border: 1px solid #333;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .device-bar {
+            height: 25px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-left: 5px;
+        }
+
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: #333; }
+
+        .live-frame {
+            width: 100%;
+            height: calc(100% - 25px);
+            border: none;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .status-engine {
+            margin-top: 15px;
+            color: #0071e3;
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* Grid de Engenharia Responsivo */
+        .engineering-grid {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr; /* Uma coluna no mobile */
+            gap: 30px;
+            padding: 0 30px;
+        }
+
+        .card-eng { border-top: 1px solid #222; padding-top: 20px; }
+        .card-eng h2 { font-size: 22px; color: #fff; margin-bottom: 10px; }
+        .card-eng p { color: #86868b; line-height: 1.5; font-size: 15px; }
+
+        .btn-home {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 12px 25px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        /* ADAPTAÇÃO PARA PC (Tablets e Desktops) */
+        @media (min-width: 768px) {
+            .hero-software { padding: 100px 20px 50px; }
+            .hero-software h1 { font-size: 64px; }
+            .hero-subtitle { font-size: 20px; }
+
+            .device-frame { 
+                height: 600px; 
+                padding: 15px;
+            }
+
+            .engineering-grid {
+                grid-template-columns: 1fr 1fr; /* Duas colunas no PC */
+                margin: 50px auto;
+            }
+
+            .status-engine { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-software">
+        <h1>Engenharia Loop.</h1>
+        <p class="hero-subtitle">O sistema em sua forma mais pura.</p>
+        <a href="index.html" class="btn-home">← Voltar</a>
+    </section>
+
+    <section class="live-preview-section">
+        <div class="device-frame">
+            <div class="device-bar">
+                <div class="dot" style="background: #ff5f56;"></div>
+                <div class="dot" style="background: #ffbd2e;"></div>
+                <div class="dot" style="background: #27c93f;"></div>
+                <span style="font-size: 9px; color: #666; margin-left: auto; font-family: monospace;">LOOP RUNTIME v2.6</span>
+            </div>
+            <iframe src="index 2.html" class="live-frame"></iframe>
+        </div>
+        <div class="status-engine">● INSTÂNCIA EM TEMPO REAL ATIVA</div>
+    </section>
+
+    <div class="engineering-grid">
+        <div class="card-eng">
+            <h2>Atualizações Contínuas</h2>
+            <p>Através da engenharia da <strong>Loop</strong>, o sebosoler.com evolui ao decorrer do tempo sem necessidade de downtime, mantendo o sistema sempre em sua versão mais estável.</p>
+        </div>
+        <div class="card-eng">
+            <h2>Monitoramento</h2>
+            <p>O quadro acima exibe a renderização atual do ecossistema, processada pelo motor de design da Loop, garantindo integridade visual em qualquer dispositivo.</p>
+        </div>
+    </div>
+
+</body>
+</html>

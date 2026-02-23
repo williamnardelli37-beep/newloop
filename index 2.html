@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <link rel="shortcut icon" href="icone sebo .WebP" type="image/x-icon">
+    <link rel="stylesheet" href="style 2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebo Só Ler</title>
+</head>
+<body>
+     <nav class="navbar-apple">
+    <div class="butt">
+        <a href="https://nossos-livros.vercel.app/">Nossos Produtos</a>
+        <a href="https://localizar-psi.vercel.app/">Localização</a>
+        <a href="https://sebo-so-ler.base44.app">loja virtual SEBO SÓ LER</a>
+    </div>
+</nav>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<div class="header-container">
+    <h1>Seja bem-vindo</h1>
+    <h2 class="imagem-rotativa">
+        <span>à loja virtual SEBO SÓ LER</span>
+    </h2>
+</div>
+
+
+
+
+<div class="promo-container">
+    <div class="promo" id="lista-promo">
+        <div class="item-venda">
+            <img src="tt1.jpg" alt="">
+            
+        </div>
+        <div class="item-venda">
+            <img src="tt2.jpg" alt="">
+            
+        </div>
+        <div class="item-venda">
+            <img src="tt4.jpg" alt="">
+            
+        </div>
+        <div class="item-venda">
+            <img src="tt5.jpg" alt="">
+            
+        </div>
+        <div class="item-venda">
+            <img src="tt6.jpg" alt="">
+           
+        </div>
+        <div class="item-venda">
+            <img src="ts2.jpg" alt="">
+            
+        </div>
+        <div class="item-venda">
+            <img src="ts6.jpg" alt="">
+        
+        </div>
+    </div>
+</div>
+
+<h1>Procura alguns gêneros?</h1>
+<div class="botoes-container">
+    <a href="https://romance-five.vercel.app/" class="btn-genero romance"><span>Romance</span></a>
+    <a href="https://suspence-seven.vercel.app/" class="btn-genero suspense"><span>Suspense</span></a>
+    <a href="https://ficcao.vercel.app/" class="btn-genero ficcao"><span>Ficção</span></a>
+    <a href="https://historia-ivory.vercel.app/" class="btn-genero historia"><span>História</span></a>
+    <a href="https://biografia-nine.vercel.app/" class="btn-genero biografia"><span>Biografia</span></a>
+    <a href="https://manga-zhjd.vercel.app/" class="btn-genero poesia"><span>Mangas</span></a>
+    <a href="https://hqs-coral.vercel.app/" class="btn-genero hqs"><span>HQs</span></a>
+    <a href="https://autoajuda-eight.vercel.app/" class="btn-genero autoajuda"><span>Autoajuda</span></a>
+    <a href="https://infantil-tau.vercel.app/" class="btn-genero infantil"><span>Infantil</span></a>
+    <a href="https://admteste.vercel.app/" class="btn-genero raridades"><span>Adimistração</span></a>
+</div>
+<div class="venda "></div>
+<div class="promo">
+    <img src="ts2.jpg" alt="">
+    <img src="ts6.jpg" alt="">
+    <img src="ts10.jpg" alt="">
+    <img src="tt5.jpg" alt="">
+    <img src="tt6.jpg" alt="">
+    <img src="tt7.jpg" alt="">
+    <img src="tt8.jpg" alt="">
+</div>
+<br>
+<script>
+    // Espera todo o conteúdo carregar
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const elementoDestino = document.getElementById('galeria');
+            if (elementoDestino) {
+                // Faz o scroll suave
+                elementoDestino.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' // Centraliza a galeria na tela
+                });
+            }
+        }, 3000); // 1,5 segundos após o carregamento total
+    });
+</script>
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar-apple');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Se rolar para baixo, esconde. Se rolar para cima, mostra.
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Rolando para baixo
+            navbar.classList.add('navbar-hidden');
+        } else {
+            // Rolando para cima
+            navbar.classList.remove('navbar-hidden');
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Garante que não fique negativo
+    });
+
+    // Mantém sua função de descer para a galeria após 1.5s
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const galeria = document.getElementById('galeria');
+            if (galeria) {
+                galeria.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }
+        }, 3000);
+    });
+</script>
+<script>
+    const containerPromo = document.querySelector('.promo');
+    const livros = document.querySelectorAll('.item-venda');
+
+    livros.forEach(livro => {
+        livro.addEventListener('click', (e) => {
+            // Se já estiver ativo, desativa tudo
+            if (livro.classList.contains('ativo')) {
+                livro.classList.remove('ativo');
+                containerPromo.style.animationPlayState = 'running';
+            } else {
+                // Remove ativo de todos os outros
+                livros.forEach(l => l.classList.remove('ativo'));
+                // Ativa o atual e pausa o movimento
+                livro.classList.add('ativo');
+                containerPromo.style.animationPlayState = 'paused';
+            }
+            e.stopPropagation();
+        });
+    });
+
+    // Se clicar fora, volta ao normal
+    document.addEventListener('click', () => {
+        livros.forEach(l => l.classList.remove('ativo'));
+        containerPromo.style.animationPlayState = 'running';
+    });
+</script>
+<footer class="footer-premium">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <img src="icone sebo .WebP" alt="Logo Sebo Só Ler" class="footer-logo">
+            <img src="loop logo.png" alt="Logo Sebo Só Ler" class="footer-logo">
+            <p>Transformando leituras em experiências desde sempre. Onde cada página conta uma nova história.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Navegação</h3>
+            <a href="https://nossos-livros.vercel.app/">Produtos</a>
+            <a href="https://localizar-one.vercel.app/">Localização</a>
+            <a href="https://sebo-so-ler.base44.app">Loja Virtual</a>
+        </div>
+
+        <div class="footer-social">
+            <h3>Siga-nos</h3>
+            <div class="social-icons">
+           <a href="https://www.instagram.com/sebosolercaxias/" class="btn-instagram" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Ícone Instagram">
+    <span>@sebosolercaxias</span>
+</a>
+              
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="credits">
+            <span>© 2026 Sebo Só Ler. Todos os direitos reservados.</span>
+            <span class="developer">
+                Desenvolvido com excelência por 
+                <a href="https://looplev.vercel.app/" class="loop-lev-link">Loop Lev/criamos o seu site</a>
+            </span>
+        </div>
+        <div class="trust-seals">
+            <span class="seal">🔒 Site Seguro</span>
+            <span class="seal">🚚 Entrega Garantida</span>
+        </div>
+    </div>
+</footer>
+<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 20px; right: 20px; background: #333; color: #fff; padding: 20px; display: none; justify-content: space-between; align-items: center; border-radius: 8px; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-family: sans-serif;">
+    <span>Utilizamos cookies para melhorar sua experiência no Sebo Só Ler. Ao continuar, você concorda com nossa política de privacidade.</span>
+    <button onclick="acceptCookies()" style="background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-weight: bold; margin-left: 15px;">Aceitar</button>
+</div>
+
+<script>
+    // Função para criar o cookie
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
+    }
+
+    // Função para ler o cookie
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for(let i=0;i < ca.length;i++) {
+            let c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    // Lógica do Banner
+    function acceptCookies() {
+        setCookie("user_consent", "true", 30); // Salva por 30 dias
+        document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    // Verifica se já aceitou ao carregar a página
+    window.onload = function() {
+        if (!getCookie("user_consent")) {
+            document.getElementById("cookie-banner").style.display = "flex";
+        }
+    }
+</script>
+<div style="text-align: center; padding: 20px; font-family: sans-serif;">
+    <p style="font-size: 14px; color: #000000;">Compra 100% Segura</p>
+    <div style="display: flex; justify-content: center; gap: 15px; align-items: center;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span style="font-weight: bold; color: #27ae60;">Ambiente Criptografado (SSL)</span>
+    </div>
+    <p style="font-size: 12px; color: #999; margin-top: 10px;">
+        Seus dados estão protegidos pela tecnologia de segurança do servidor.
+    </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,869 @@
+
+/* --- 1. CONFIGURAÇÕES GERAIS E FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-top: 70px; /* Espaço para a navbar fixa */
+    background: linear-gradient(180deg, #dcd7bb 0%, #b2b7a0 50%, #383535c0 100%) no-repeat fixed;
+    color: #1d1d1f;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 2. NAVBAR (RESPONSIVA PC E CELULAR) --- */
+/* Container fixo no topo */
+/* --- CONFIGURAÇÃO PADRÃO (PC) --- */
+.navbar-apple {
+    position: fixed;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
+    pointer-events: none;
+    padding: 0 10px;
+}
+
+.navbar-apple .butt {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 40px; 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Efeito de aumento: Funciona apenas em dispositivos com mouse (PC) */
+@media (hover: hover) {
+    .navbar-apple .butt:hover {
+        padding: 18px 50px;
+        gap: 40px;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(1.02); /* Aumenta no PC */
+    }
+}
+
+.navbar-apple .butt a {
+    color: #2c1e14;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* --- AJUSTE PARA TELEFONE (MOBILE) --- */
+@media (max-width: 600px) {
+    .navbar-apple .butt {
+        gap: 12px;
+        padding: 10px 18px;
+        width: 92%;
+        /* Remove qualquer aumento ou movimento no mobile */
+        transform: none !important; 
+    }
+
+    /* Garante que ao tocar (click) no celular, ela não cresça */
+    .navbar-apple .butt:hover, 
+    .navbar-apple .butt:active {
+        transform: none !important;
+        padding: 10px 18px !important;
+        gap: 12px !important;
+    }
+
+    .navbar-apple .butt a {
+        font-size: 11px;
+    }
+}
+
+/* Animação de entrada (Caindo) */
+@keyframes entradaNotch {
+    0% { transform: translateY(-80px) scale(0.8); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+.navbar-apple .butt {
+    animation: entradaNotch 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* --- INTERAÇÕES DINÂMICAS --- */
+
+/* Ao passar o mouse: Expande e fica mais nítida */
+.navbar-apple .butt:hover {
+    padding: 18px 50px;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-apple .butt a:hover {
+    opacity: 1;
+    transform: translateY(-2px); /* Pequeno salto no link */
+}
+
+/* Ao clicar: Efeito de compressão (Bounce) */
+.navbar-apple .butt:active {
+    transform: scale(0.92);
+    transition: all 0.1s;
+}
+
+/* Animação de entrada (Caindo e quicando) */
+@keyframes entradaNotch {
+    0% { transform: translateY(-80px) scale(0.6); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* --- 3. HEADER (SEJA BEM-VINDO) --- */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+    background: linear-gradient(180deg, #dcd7bb 0%, #b2b7a0 50%, #000000 100%) no-repeat fixed;
+}
+.header-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    color: #2c1e14;
+    margin: 0;
+}
+
+.header-container h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.8rem);
+    color: #8b4513;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 380px; /* Largura mínima para o texto não quebrar */
+    height: 160px;    /* Altura para a imagem quadrada */
+}
+
+/* Estilo do TEXTO */
+.header-container h2 span {
+    position: absolute;
+    white-space: nowrap;
+    animation: blurCiclo 4.0s infinite ease-in-out;
+}
+
+/* Estilo da IMAGEM (Quadrada) */
+.header-container h2::after {
+    content: "";
+    position: absolute;
+    width: 150px; 
+    height: 150px;
+    background-image: url('icone\ sebo\ .WebP'); /* Insira sua imagem aqui */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    opacity: 0;
+    filter: blur(15px);
+    /* A animação da imagem é a mesma, mas atrasada em 2 segundos (metade do ciclo) */
+    animation: blurCiclo 4.0s infinite ease-in-out 2.0s;
+}
+
+/* ANIMAÇÃO DE DESFOQUE (Entrada, Pausa, Saída) */
+@keyframes blurCiclo {
+    0% {
+        opacity: 0;
+        filter: blur(15px);
+        transform: scale(0.95);
+    }
+    10%, 40% {
+        opacity: 1;
+        filter: blur(0px); /* Totalmente nítido por 2 segundos */
+        transform: scale(1);
+    }
+    50%, 100% {
+        opacity: 0;
+        filter: blur(15px);
+        transform: scale(0.95);
+    }
+}
+
+/* --- 4. SEÇÃO DE PRODUTOS E CARROSSEL --- */
+.produtos {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.produtos h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: #2c1e14;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.produtos h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background-color: #8b4513;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.imgg {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 25px;
+    padding: 20px 60px;
+    scrollbar-width: none;
+}
+
+.imgg::-webkit-scrollbar { display: none; }
+
+.imgg img {
+    flex: 0 0 220px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); 
+    transition: 0.4s ease;
+    scroll-snap-align: center;
+}
+
+.imgg img:hover { transform: scale(1.05); }
+
+/* --- 5. SETAS DECORATIVAS (CENTRALIZADAS) --- */
+.seta-decorativa {
+    position: absolute;
+    top: 50%;
+    font-size: 3.5rem;
+    color: rgba(0, 0, 0, 0.3);
+    z-index: 25;
+    pointer-events: none;
+    user-select: none;
+}
+
+.seta-esq { left: 15px; animation: moverEsq 1.5s infinite ease-in-out; }
+.seta-dir { right: 15px; animation: moverDir 1.5s infinite ease-in-out; }
+
+@keyframes moverEsq {
+    0%, 100% { transform: translate(0, -50%); opacity: 0.3; }
+    50% { transform: translate(-15px, -50%); opacity: 0.8; }
+}
+
+@keyframes moverDir {
+    0%, 100% { transform: translate(0, -50%); opacity: 0.3; }
+    50% { transform: translate(15px, -50%); opacity: 0.8; }
+}
+
+/* --- 6. GRID DE GÊNEROS (BOTÕES) --- */
+/* Título da Seção */
+h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: #2c1e14;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin: 40px 0 30px;
+}
+.botoes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn-genero {
+    position: relative;
+    height: 180px;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    text-decoration: none !important;
+}
+
+.btn-genero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.btn-genero::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; height: 70%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    z-index: 2;
+}
+
+.btn-genero:hover::before { transform: scale(1.1); opacity: 1; }
+
+.btn-genero span {
+    position: relative;
+    z-index: 3;
+    color: white !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+
+/* Ajuste para Mobile */
+@media (max-width: 600px) {
+    .botoes-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular */
+        padding: 10px 5%;
+        gap: 12px;
+    }
+    
+    .btn-genero {
+        height: 60px;
+    }
+    
+    .btn-genero span {
+        font-size: 0.8rem;
+    }
+}
+
+/* --- 7. BANNER MUNDO INFANTIL --- */
+.admin-banner {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 50px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 100%);
+    border-radius: 45px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 4px solid #ffffff;
+}
+
+.admin-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.admin-content h1 {
+    flex: 1;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #0369a1;
+    margin: 0;
+    text-align: left;
+}
+
+.admin-description {
+    flex: 1.2;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #475569;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* --- 8. ANIMAÇÕES DE ENTRADA --- */
+.efeito-entrada { animation: surgindo 1.2s ease-out forwards; }
+.efeito-entrada-atraso { animation: surgindo 1.2s ease-out 0.5s backwards; }
+
+@keyframes surgindo {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 9. MEDIA QUERIES (ADAPTAÇÃO CELULAR) --- */
+@media (max-width: 768px) {
+    body { padding-top: 80px; }
+    
+    .navbar-apple { height: auto; padding: 5px 0; }
+    .butt { gap: 15px; }
+    .butt a { font-size: 10px; }
+
+    .header-container { flex-direction: column; text-align: center; gap: 15px; }
+
+    .admin-content { flex-direction: column; text-align: center; }
+    .admin-content h1, .admin-description { text-align: center; }
+
+    .imgg { padding: 20px 40px; }
+    .imgg img { flex: 0 0 180px; height: 250px; }
+    
+    .seta-decorativa { font-size: 2.2rem; }
+}
+
+/* LINKS DAS IMAGENS */
+.romance::before { background-image: url(romance\ .jpg); }
+.suspense::before { background-image: url(suspence\ .webp); }
+.ficcao::before { background-image: url(ficçao.WebP); }
+.historia::before { background-image: url(historia\ .WebP); }
+.biografia::before { background-image: url('https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=400'); }
+.poesia::before { background-image: url('mang.webp'); }
+.hqs::before { background-image: url('https://images.unsplash.com/photo-1588497859490-85d1c17db96d?q=80&w=400'); }
+.autoajuda::before { background-image: url(auto.WebP); }
+.infantil::before { background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=400'); }
+.raridades::before { background-image: url(adimi.WebP); }
+/* --- SEÇÃO DE PRODUTOS --- */
+.produtos {
+    text-align: center;
+    padding: 60px 20px 40px; /* Respiro: 60px topo, 20px lados, 40px baixo */
+    max-width: 1300px;
+    margin: 0 auto;
+    background-color: transparent; /* Mantém a cor do corpo do site */
+}
+
+/* O Título "Nossos Produtos Destaques" */
+.produtos h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Diminui no celular, aumenta no PC */
+    color: #2c1e14;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    position: relative;
+    display: inline-block; /* Importante para a linha abaixo centralizar */
+}
+
+/* A Linha Decorativa (Estilo Sebo Elegante) */
+.produtos h2::after {
+    content: '';
+    display: block;
+    width: 60%;         /* Linha ocupa 60% da largura do texto */
+    height: 3px;        /* Espessura da linha */
+    background-color: #8b4513; /* Cor madeira/couro */
+    margin: 10px auto 0; /* Centraliza a linha e dá 10px de distância do texto */
+    border-radius: 5px;
+}
+
+/* Ajuste do Container do Carrossel que fica dentro de Produtos */
+.produtos .carrossel-container {
+    margin-top: 40px; /* Afasta o carrossel do título */
+    position: relative;
+    width: 100%;
+}
+
+/* --- AJUSTE PARA CELULAR --- */
+@media (max-width: 768px) {
+    .produtos {
+        padding: 40px 10px 20px;
+    }
+    
+    .produtos h2 {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+
+    .produtos h2::after {
+        width: 40%; /* Linha menor no celular para um visual mais clean */
+        height: 2px;
+    }
+}
+/* Estilo do título/texto de venda */
+.venda {
+    color: #8b4513;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    font-size: 1.5rem; /* Ajusta conforme o tamanho da tela */
+}
+
+/* Container principal */
+.promo img {
+    width: 220px;
+    height: 300px;
+    /* Garante que a imagem preencha o retângulo sem distorcer */
+    object-fit: cover; 
+    object-position: center;
+    
+    /* Se a imagem original tiver uma bordinha branca interna, 
+       esse leve aumento de escala (1.05) ajuda a "escondê-la" para fora do border-radius */
+    transform: scale(1.02); 
+    
+    border-radius: 15px;
+    
+    /* Fundo escuro evita que brilhe um branco antes da imagem carregar */
+    background-color: #222; 
+    
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Ajuste no Hover para manter a lógica de destaque */
+.promo img:hover {
+    /* Mantemos o scale maior que o original (1.15) */
+    transform: scale(1.15) translateY(-15px) rotate(2deg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+/* 1. TRAVA DE SEGURANÇA GLOBAL 
+   Essencial para impedir que o site tenha rolagem lateral (o erro do "arraste")
+*/
+/* Container de cada livro */
+.item-venda {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo do Texto do Valor */
+.valor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    background: rgba(139, 69, 19, 0.9); /* Marrom do seu tema com transparência */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: 'Times New Roman', serif;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none; /* O clique passa pelo texto e vai para a div */
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Quando clicado (Classe aplicada pelo JS) */
+.item-venda.ativo .valor {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.item-venda.ativo img {
+    filter: brightness(0.5); /* Escurece a imagem para o preço brilhar */
+    transform: scale(1.05);
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. ESTILO DO TÍTULO (Classe .venda) */
+.venda {
+    color: #8b4513;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+/* 3. CONTAINER DA VITRINE 
+   O 'overflow: hidden' aqui corta qualquer conteúdo que sair da largura da tela.
+*/
+.promo-container {
+    overflow: hidden;
+    width: 100%;
+    background: transparent;
+    padding: 20px 0;
+    position: relative;
+    /* Trava o toque lateral, permitindo apenas o scroll vertical da página */
+    touch-action: pan-y;
+}
+
+/* 4. A FAIXA DE IMAGENS (CARROSSEL) */
+.promo {
+    display: flex;
+    width: max-content; 
+    gap: 30px;
+    animation: rolarInfinito 30s linear infinite;
+    will-change: transform; /* Melhora a performance em celulares */
+}
+
+/* 5. ESTILO DOS ITENS (IMAGENS/LIVROS) */
+.promo img {
+    width: 220px;
+    height: 300px;
+    object-fit: contain; /* Mantém a proporção do livro sem cortar */
+    background-color: white;
+    
+    /* Design das bordas e sombra */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    
+    flex-shrink: 0; /* Impede que o item seja esmagado */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Pausar ao passar o mouse (PC) */
+.promo-container:hover .promo {
+    animation-play-state: paused;
+}
+
+/* Efeito de destaque no hover (PC) */
+.promo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* --- ANIMAÇÃO DA ROLAGEM --- */
+@keyframes rolarInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move metade do conteúdo para criar o loop contínuo */
+        transform: translateX(-50%); 
+    }
+}
+
+/* 6. AJUSTES PARA TELEFONE (RESPONSIVIDADE) 
+   Aqui resolvemos o bug específico do mobile
+*/
+@media (max-width: 768px) {
+    .venda {
+        font-size: 1.4rem;
+    }
+
+    .promo-container {
+        padding: 10px 0;
+    }
+
+    .promo {
+        gap: 15px; /* Reduz espaço no mobile */
+        /* Animação ligeiramente mais rápida para telas menores */
+        animation-duration: 20s; 
+    }
+
+    .promo img {
+        width: 150px; /* Reduz o tamanho da imagem para não pesar no layout */
+        height: 220px;
+        border-radius: 10px;
+    }
+}
+
+/* Ajuste fino para celulares muito pequenos (ex: iPhone SE) */
+@media (max-width: 400px) {
+    .promo img {
+        width: 130px;
+        height: 190px;
+    }
+}
+/* --- FOOTER PREMIUM --- */
+.footer-premium {
+    background-color: var(--marrom-nobre);
+    color: var(--bege-linho);
+    padding: 80px 10% 40px;
+    margin-top: 100px;
+    border-top: 2px solid var(--ouro);
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    filter: brightness(1.2);
+}
+
+.footer-brand p {
+    max-width: 300px;
+    opacity: 0.7;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-links h3, .footer-social h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--ouro);
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--bege-linho);
+    text-decoration: none;
+    margin-bottom: 12px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    transform: translateX(5px);
+    color: var(--ouro);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-dot {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--ouro);
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: 0.4s;
+}
+
+.social-dot:hover {
+    background: var(--ouro);
+    color: var(--marrom-nobre);
+    transform: translateY(-5px);
+}
+
+/* --- BARRA DE CRÉDITOS FINAL --- */
+.footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.credits {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.loop-lev-link {
+    color: var(--ouro);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.loop-lev-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--ouro);
+}
+
+.trust-seals {
+    display: flex;
+    gap: 20px;
+}
+
+.seal {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVIDADE RODAPÉ */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-brand p {
+        margin: 0 auto;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* --- BOTÃO INSTAGRAM COM FOTO --- */
+.btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço entre a foto e o texto */
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 50px;
+    text-decoration: none;
+    color: white !important;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+    margin: 10px;
+}
+
+/* AJUSTE DA FOTO DENTRO DO BOTÃO */
+.btn-instagram img {
+    width: 20px;   /* Largura da foto */
+    height: 20px;  /* Altura da foto */
+    display: block;
+    object-fit: contain;
+    /* Se quiser a logo branca, use a linha abaixo. 
+       Se quiser a logo colorida original, apague a linha do filter */
+    filter: brightness(0) invert(1); 
+}
+
+.btn-instagram:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.5);
+}
+
+/* Centralização do botão se ele estiver no rodapé */
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
