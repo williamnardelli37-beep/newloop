@@ -1,307 +1,291 @@
 /* ============================================================
-   ESTÉTICA 2021 - SEBOSOLER.COM (VERSÃO FINAL COMPLETA)
+   LOOP 26 - AESTHETIC FRAMEWORK (2026 OFFICIAL)
    ============================================================ */
 
-/* 1. RESET E BASE */
+:root {
+    --apple-bg: #fbfbfd;
+    --apple-text: #1d1d1f;
+    --apple-gray: #6e6e73;
+    --accent-blue: #0071e3;
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
+    --ai-gradient: linear-gradient(135deg, #0071e3 0%, #42bff9 50%, #2bd9ff 100%);
+    --surface-blur: blur(30px) saturate(210%);
+}
+
+/* 1. RESET E REFINAMENTO */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: transparent;
-}
-
-html, body {
-    width: 100%;
-    overflow-x: hidden; /* Trava absoluta contra movimento lateral */
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #ffffff;
-    color: #1d1d1f;
-    line-height: 1.47;
     -webkit-font-smoothing: antialiased;
 }
 
-/* 2. NAVBAR CENTRALIZADA */
-.apple-navbar {
-    background: rgba(255, 255, 255, 0.398);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    height: 48px;
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
     width: 100%;
+    overflow-x: hidden;
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--apple-bg);
+    color: var(--apple-text);
+    line-height: 1.47;
+    letter-spacing: -0.018em;
+}
+
+/* 2. NAVBAR */
+.apple-navbar {
+    background: var(--glass-bg);
+    backdrop-filter: var(--surface-blur);
+    -webkit-backdrop-filter: var(--surface-blur);
+    height: 56px;
+    width: 94%;
+    max-width: 1100px;
+    margin: 14px auto;
+    border-radius: 22px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     position: fixed;
     top: 0;
-    z-index: 999;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
 }
 
 .nav-content {
     display: flex;
-    justify-content: center; /* Centraliza Logo + Links */
+    justify-content: space-between;
     align-items: center;
-    gap: 40px; 
     width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
+    max-width: 1000px;
+    padding: 0 24px;
 }
 
 .logo {
-    font-size: 19px;
-    font-weight: 600;
-    color: #1d1d1f;
+    font-size: 20px;
+    font-weight: 700;
     text-decoration: none;
-    letter-spacing: -0.5px;
+    color: var(--apple-text);
+    letter-spacing: -0.8px;
 }
+
+.lev { color: var(--accent-blue); }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 28px;
 }
 
 .nav-links li a {
-    color: #1d1d1f;
-    opacity: 0.8;
+    color: var(--apple-text);
+    opacity: 0.65;
     text-decoration: none;
-    font-size: 12px;
-    transition: opacity 0.3s;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .nav-links li a:hover { opacity: 1; }
 
-/* 3. HERO IMAGEM (TOP) */
+/* 3. SEARCH BAR */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.04);
+    padding: 6px 16px;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-container:focus-within {
+    background: rgba(0,0,0,0.08);
+    width: 240px;
+}
+
+#site-search {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 130px;
+    padding-left: 8px;
+    color: var(--apple-text);
+}
+
+.search-results {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(25px);
+    width: 280px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    display: none;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.search-results a {
+    display: block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: var(--apple-text);
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* 4. HERO TOP - FUNDO REMOVIDO */
+.hero-top {
+    margin-top: 100px;
+    animation: fadeIn 1.2s ease-out;
+}
+
 .imagens {
-    margin-top: 48px;
-    padding: 60px 20px;
-    text-align: center;
-    background: #f5f5f7;
-    
+    background: transparent; /* Removido o preto */
+    padding: 40px 24px;
+    display: flex;
+    justify-content: center;
 }
 
 .imagens img {
-    max-width: 100%;
-    width: 850px;
-    height: auto;
-    border-radius: 20px;
+    max-width: 95%;
+    width: 1000px;
+    border-radius: 42px;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.08); /* Sombra mais leve para fundo claro */
 }
 
-/* 4. TÍTULOS E DIVISORES */
-.titulo {
-    padding: 60px 20px 20px;
+.imagens img:hover { transform: scale(1.02); }
+
+/* 5. SEÇÃO IA */
+.ai-experience {
+    padding: 100px 24px;
+    background: #ffffff;
     text-align: center;
 }
 
-.titulo h1 {
-    font-size: clamp(32px, 8vw, 56px);
-    font-weight: 700;
-    letter-spacing: -0.015em;
+.ai-header {
+    max-width: 850px;
+    margin: 0 auto 80px;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.divisor {
-    border: 0;
-    border-top: 1px solid #d2d2d7;
-    margin: 40px auto;
-    width: 80%;
-}
-
-/* 5. SEÇÃO HERO VÍDEO (INSTAGRAM) - FIX ESTOURO */
-.apple-hero-video {
-    background: #f5f5f7;
-    padding: 80px 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.hero-container {
-    max-width: 1100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 0 40px;
-     border: 1px solid black ;
-     border-radius: 30px;
-}
-
-.hero-text {
-    flex: 1;
-    text-align: left;
-    color: rgb(162, 166, 167);
-}
-
-.badge {
-    color: #bf4800;
-    font-weight: 600;
-    font-size: 14px;
+.ai-badge {
+    background: var(--ai-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
     text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
 }
 
-.hero-text h1 {
-    font-size: 48px;
-    margin: 15px 0;
-}
-
-.hero-text p {
-    font-size: 21px;
-    color: #86868b;
-    margin-bottom: 30px;
-}
-
-.button-blue {
-    background: #0071e3;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 980px;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.link-more {
-    color: #06c;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 17px;
-}
-
-.hero-video-box {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    max-width: 400px; /* Trava o tamanho no PC */
-}
-
-.instagram-media {
-    width: 100% !important;
-    min-width: 0 !important; /* CORRIGE MOVIMENTO LATERAL */
-    border-radius: 20px !important;
-}
-
-/* 6. GRADE DE FOTOS */
-.fotos4 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px 20px;
-     border: 1px solid black ;
-     border-radius: 30px;
-     
-}
-
-.fotos4 img {
-    width: 100%;
-    max-width: 340px;
-    height: auto;
-    border-radius: 28px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-/* 7. GRID DE TEXTOS */
-.grid-textos {
-    padding: 80px 0;
-    background: #fff;
-   
+.ai-header h2 {
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 700;
+    margin: 24px 0;
+    letter-spacing: -2px;
 }
 
 .container-links {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    padding: 0 40px;
-    
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
 }
 
-.bloco h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    
+.bloco-card {
+    background: #ffffff;
+    padding: 48px 32px;
+    border-radius: 36px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0,0,0,0.03);
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
 
-.bloco p {
-    font-size: 17px;
-    color: #86868b;
-    line-height: 1.5;
+.bloco-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.06);
 }
 
-/* 8. RODAPÉ (COPYRIGHT E LINKS) */
+.bloco-card i {
+    font-size: 36px;
+    margin-bottom: 24px;
+    color: var(--accent-blue);
+    display: block;
+}
+
+/* 6. RODAPÉ */
 .apple-footer {
     background: #f5f5f7;
-    padding: 60px 0;
-    color: #86868b;
-    font-size: 12px;
+    padding: 80px 24px;
+    border-top: 1px solid rgba(0,0,0,0.05);
 }
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-brands {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    opacity: 0.4;
+    filter: grayscale(1);
+}
+
+.footer-logo { height: 28px; }
 
 .footer-content {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0 20px;
-    border-top: 1px solid #d2d2d7;
-    padding-top: 20px;
-}
-
-.footer-copy {
-    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--apple-gray);
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-mapa {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 24px;
 }
 
 .footer-mapa a {
-    color: #515154;
+    color: #424245;
     text-decoration: none;
 }
 
-.footer-mapa a:hover { text-decoration: underline; }
-
-/* 9. RESPONSIVIDADE PARA TELEFONE */
+/* 7. RESPONSIVIDADE */
 @media (max-width: 768px) {
-    .nav-content {
-        gap: 15px;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .nav-links {
-        gap: 10px;
-    }
-
-    .nav-links li a { font-size: 10px; }
-
-    .hero-container {
-        flex-direction: column;
+    .apple-navbar { width: 90%; }
+    .nav-links { display: none; }
+    .footer-content {
+        flex-direction: column-reverse;
+        gap: 24px;
         text-align: center;
-        padding: 0 20px;
-    }
-
-    .hero-text { text-align: center; }
-
-    .hero-video-box {
-        justify-content: center;
-        max-width: 100%;
-    }
-
-    .container-links {
-        grid-template-columns: 1fr;
-        padding: 0 30px;
-    }
-
-    .link-more {
-        display: block;
-        margin-left: 0;
-        margin-top: 15px;
-    }
-
-    .footer-mapa {
-        justify-content: center;
     }
 }
