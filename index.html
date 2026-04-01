@@ -16,7 +16,6 @@
             <ul class="nav-links">
                 <li><a href="inovacao.html">Inovação</a></li>
                 <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="software.html">Software</a></li>
                 <li><a href="index 3.html">Onde Comprar</a></li>
             </ul>
             
@@ -107,55 +106,6 @@
         </div>
     </div>
 </footer>
-
-    <script async src="//www.instagram.com/embed.js"></script>
-    <script src="script.js"></script>
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('site-search');
-    const resultsContainer = document.getElementById('search-results');
-
-    // Dados simulados para busca (podem ser links reais)
-    const database = [
-        { title: 'Inovação Digital', link: 'inovacao.html' },
-        { title: 'Nossos Produtos', link: 'produtos.html' },
-        { title: 'Software Loop', link: 'software.html' },
-        { title: 'Privacidade e Segurança', link: 'privacidade.html' },
-        { title: 'Instagram Reels', link: 'https://instagram.com/...' }
-    ];
-
-    searchInput.addEventListener('input', (e) => {
-        const value = e.target.value.toLowerCase();
-        resultsContainer.innerHTML = '';
-
-        if (value.length > 0) {
-            const filtered = database.filter(item => 
-                item.title.toLowerCase().includes(value)
-            );
-
-            if (filtered.length > 0) {
-                resultsContainer.style.display = 'block';
-                filtered.forEach(item => {
-                    const a = document.createElement('a');
-                    a.href = item.link;
-                    a.textContent = item.title;
-                    resultsContainer.appendChild(a);
-                });
-            } else {
-                resultsContainer.style.display = 'none';
-            }
-        } else {
-            resultsContainer.style.display = 'none';
-        }
-    });
-
-    // Fecha resultados ao clicar fora
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.search-container')) {
-            resultsContainer.style.display = 'none';
-        }
-    });
-});
-</script>
+<!-- Copyright © 2026 Loop lev favor não copiar a ideia  -->
 </body>
 </html>
