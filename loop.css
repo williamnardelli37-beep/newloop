@@ -1,0 +1,213 @@
+/* ============================================================
+   LOOP 26 - STORE EXTENSION (2026 OFFICIAL)
+   ============================================================ */
+
+/* 1. Layout da Página */
+.store-main {
+    margin-top: 100px; /* Compensa a navbar fixa */
+    animation: fadeIn 1s ease-out;
+}
+
+/* 2. Store Hero */
+.store-hero {
+    padding: 120px 24px 80px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.store-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.store-hero-content h1 {
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 700;
+    margin: 24px 0;
+    letter-spacing: -2.5px;
+    line-height: 1.1;
+    color: var(--apple-text);
+}
+
+.store-hero-content p {
+    font-size: clamp(17px, 2vw, 21px);
+    color: var(--apple-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 3. Grid de Produtos */
+.products-grid-section {
+    padding: 80px 24px;
+    background: var(--apple-bg);
+}
+
+.container-products {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* 4. Card do Produto */
+.product-card {
+    background: #ffffff;
+    padding: 60px 40px;
+    border-radius: 36px;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Para o badge */
+}
+
+.product-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 50px 100px rgba(0,0,0,0.08);
+}
+
+/* Card Destaque (Premium) */
+.product-card.premium {
+    border: 2px solid var(--accent-blue);
+    box-shadow: 0 10px 40px rgba(0, 113, 227, 0.05);
+}
+
+.product-badge {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: var(--accent-blue);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ícone e Textos do Card */
+.product-icon {
+    font-size: 48px;
+    color: var(--accent-blue);
+    margin-bottom: 30px;
+}
+
+.product-card h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    margin-bottom: 8px;
+    color: var(--apple-text);
+}
+
+.product-subtitle {
+    color: var(--apple-gray);
+    font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* Lista de Features */
+.product-features {
+    list-style: none;
+    margin-bottom: 40px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 30px;
+}
+
+.product-features li {
+    font-size: 14px;
+    color: #424245;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-features li i {
+    color: var(--accent-blue);
+    font-size: 16px;
+}
+
+/* Preço e Botão */
+.product-price {
+    margin-bottom: 30px;
+}
+
+.product-price .price {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--apple-text);
+}
+
+.product-price .period {
+    font-size: 13px;
+    color: var(--apple-gray);
+    margin-left: 4px;
+}
+
+.product-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    border-color: rgba(0,0,0,0.1);
+    color: var(--apple-text);
+    background: rgba(0,0,0,0.02);
+}
+
+.product-card.premium .product-btn {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}
+
+.product-card.premium .product-btn:hover {
+    background: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* 5. Seção Upgrade */
+.store-upgrade {
+    padding: 100px 24px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.upgrade-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--apple-bg);
+    padding: 60px;
+    border-radius: 36px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.upgrade-icon {
+    font-size: 50px;
+    color: var(--accent-blue);
+    margin-bottom: 24px;
+}
+
+.upgrade-container h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+}
+
+.upgrade-container p {
+    color: var(--apple-gray);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* 6. Responsividade da Loja */
+@media (max-width: 768px) {
+    .container-products { gap: 20px; }
+    .product-card { padding: 40px 24px; }
+    .upgrade-container { padding: 40px 20px; }
+}

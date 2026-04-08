@@ -328,3 +328,17 @@ body {
     transform: scale(0.96);
     background: rgba(255, 255, 255, 0.15);
 }
+/* Ajuste fino para os botões dentro dos cards de projeto */
+.bloco-card .apple-button-glass {
+    margin-top: auto; /* Empurra o botão para o final do card */
+    text-align: center;
+    width: fit-content;
+    border: 1px solid rgba(0, 113, 227, 0.2); /* Borda levemente azulada */
+    color: var(--accent-blue);
+}
+
+.bloco-card .apple-button-glass:hover {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}

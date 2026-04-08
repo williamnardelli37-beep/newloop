@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="loop.css">
+    <link rel="shortcut icon" href="loop logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop 26 | store 1.0</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Estilos de Expansão */
+        .section-padding { padding: 100px 24px; }
+        .centered-header { text-align: center; margin-bottom: 60px; }
+        
+        /* Grid de Diferenciais */
+        .features-extra { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .feature-item { text-align: center; padding: 20px; }
+        .feature-item i { font-size: 40px; color: var(--accent-blue); margin-bottom: 15px; display: block; }
+        
+        /* FAQ */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: #fff; margin-bottom: 15px; padding: 25px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.05); }
+        .faq-item h4 { margin-bottom: 10px; color: var(--apple-text); }
+        .faq-item p { color: var(--apple-gray); font-size: 15px; }
+
+        /* Checkout Form */
+        .checkout-section { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.95); z-index: 2000; overflow-y: auto; padding: 50px 20px; }
+        .checkout-container { max-width: 500px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; }
+    </style>
+</head>
+<body>
+    
+    <nav class="apple-navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">Loop<span class="lev">lev</span></a>
+            <ul class="nav-links">
+                <li><a href="#ai-section">Tecnologia</a></li>
+                <li><a href="#store">Preços</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-top">
+            <div class="imagens">
+                <img src="teste2.png" alt="Destaque">
+            </div>
+            <div style="text-align:center; padding: 40px;">
+                <h1 style="font-size: 3rem; letter-spacing: -2px;">Seu negócio no futuro, hoje.</h1>
+                <p style="color: var(--apple-gray); margin-bottom: 30px;">Sites de alta conversão com a estética Loop 2026.</p>
+                <a href="#store" class="apple-button-glass">Começar Projeto</a>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background: #fff;">
+            <div class="features-extra">
+                <div class="feature-item">
+                    <i class="ph ph-lightning"></i>
+                    <h3>Velocidade Extrema</h3>
+                    <p>Sites que carregam em menos de 2 segundos para não perder vendas.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="ph ph-device-mobile"></i>
+                    <h3>Mobile First</h3>
+                    <p>Experiência perfeita em iPhones e Androids de qualquer tamanho.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="ph ph-google-logo"></i>
+                    <h3>SEO Integrado</h3>
+                    <p>Sua empresa nas primeiras páginas de busca do Google.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-section" class="ai-experience" style="background: var(--apple-bg);">
+            <div class="ai-header centered-header">
+                <span class="ai-badge">Loop Intelligence</span>
+                <h2>Sistemas Inteligentes</h2>
+                <p>Nossos sites incluem painéis de administração que pensam por você.</p>
+            </div>
+            <div class="container-links">
+                <div class="bloco-card"><h3>Gestão de Estoque</h3><p>Controle seus produtos em tempo real com facilidade.</p></div>
+                <div class="bloco-card"><h3>Checkout Seguro</h3><p>Pagamentos integrados e criptografados ponta a ponta.</p></div>
+            </div>
+        </section>
+
+        <section id="store" class="section-padding">
+            <div class="centered-header">
+                <h2>Planos & Investimento</h2>
+            </div>
+            <div class="container-links">
+                <div class="bloco-card">
+                    <h3>Empresarial Admin</h3>
+                    <p>Site portfólio com painel para você mesmo editar textos e imagens.</p>
+                    <span style="font-size: 24px; font-weight: bold; display:block; margin: 15px 0;">R$ 1.000 <small style="font-size:12px;">+ .com</small></span>
+                    <button onclick="abrirCheckout('Empresarial Admin', '1000')" class="apple-button-glass">Escolher este</button>
+                </div>
+
+                <div class="bloco-card" style="border: 2px solid var(--accent-blue);">
+                    <h3>Landing Page Vendas</h3>
+                    <p>Focada 100% em vender seu produto. Inclui servidor e domínio.</p>
+                    <span style="font-size: 24px; font-weight: bold; display:block; margin: 15px 0;">R$ 2.000 <small style="font-size:12px;">Completo</small></span>
+                    <button onclick="abrirCheckout('Landing Page Vendas', '2000')" class="apple-button-glass" style="background: var(--accent-blue); color: #fff;">Escolher este</button>
+                </div>
+
+                <div class="bloco-card">
+                    <h3>LP + Gestão</h3>
+                    <p>A solução para quem precisa vender e controlar estoque simultaneamente.</p>
+                    <span style="font-size: 24px; font-weight: bold; display:block; margin: 15px 0;">R$ 2.000 <small style="font-size:12px;">+ sistema</small></span>
+                    <button onclick="abrirCheckout('LP + Gestão', '2000')" class="apple-button-glass">Escolher este</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section-padding" style="background: #fff;">
+            <div class="centered-header">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>Quanto tempo demora para entregar?</h4>
+                    <p>Landing pages ficam prontas em média em 30 dias úteis.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>O site é meu para sempre?</h4>
+                    <p>Sim. Após a entrega, o site e o domínio são de sua total propriedade.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Terei suporte após a entrega?</h4>
+                    <p>Sim, oferecemos suporte técnico gratuito para qualquer ajuste.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="checkout" class="checkout-section">
+        <div class="checkout-container">
+            <h2 id="check-prod">Finalizar Pedido</h2>
+            <p style="margin-bottom: 20px; color: var(--apple-gray);">Preencha para iniciarmos no WhatsApp.</p>
+            <form id="orderForm">
+                <div class="form-group"><label>Seu Nome</label><input type="text" id="c-nome" required></div>
+                <div class="form-group"><label>Nome do Negócio</label><input type="text" id="c-loja" required></div>
+                <div class="form-group"><label>Possui Logo?</label><select id="c-logo"><option>Sim</option><option>Não (Preciso criar)</option></select></div>
+                <div class="form-group"><label>Deseja domínio .com?</label><select id="c-com"><option>Sim, incluam para mim</option><option>Já tenho domínio</option></select></div>
+                <button type="button" onclick="enviarPedido()" class="apple-button-glass" style="width:100%; background: #25d366; color:#fff; border:none;">Enviar para o WhatsApp</button>
+                <button type="button" onclick="fecharCheckout()" style="width:100%; margin-top:10px; background:none; border:none; color:red; cursor:pointer;">Cancelar</button>
+            </form>
+        </div>
+    </div>
+<section id="dominio-search" class="section-padding" style="background: #fff; border-bottom: 1px solid rgba(0,0,0,0.05);">
+    <div class="centered-header">
+        <span class="ai-badge">Registro Loop</span>
+        <h2>Encontre seu endereço digital</h2>
+        <p>Digite o nome desejado para verificar a disponibilidade.</p>
+    </div>
+
+    <div style="max-width: 700px; margin: 0 auto; position: relative; padding: 0 20px;">
+        <div style="display: flex; background: #f5f5f7; padding: 10px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.1);">
+            <input type="text" id="domain-input" placeholder="exemplo: minhaempresa" style="flex: 1; background: transparent; border: none; padding: 15px; font-size: 18px; outline: none;">
+            <select id="tld-select" style="background: white; border: 1px solid #ddd; border-radius: 12px; padding: 0 15px; margin-right: 10px; font-weight: bold;">
+                <option value=".com">.com</option>
+                <option value=".com.br">.com.br</option>
+                <option value=".online">.online</option>
+                <option value=".tech">.tech</option>
+            </select>
+            <button onclick="verificarDominio()" class="apple-button-glass" style="background: var(--apple-text); color: white; border: none;">Verificar</button>
+        </div>
+
+        <div id="domain-result" style="margin-top: 25px; display: none; text-align: center; animation: fadeInUp 0.5s ease;">
+            <div id="status-card" style="padding: 20px; border-radius: 15px; display: inline-block; width: 100%;">
+                <p id="status-text" style="font-weight: 600; font-size: 18px;"></p>
+                <button id="btn-reservar" onclick="reservarDominio()" class="apple-button-glass" style="margin-top: 15px; display: none; background: #25d366; color: white; border: none;">Reservar este domínio</button>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer class="apple-footer">
+        <div class="footer-container">
+            <p>Loop lev & loop creative © 2026. Todos os direitos reservados. <strong>54 99324-3670</strong></p>
+        </div>
+    </footer>
+
+    <script>
+        let produtoSelecionado = "";
+        let precoSelecionado = "";
+
+        function abrirCheckout(nome, preco) {
+            produtoSelecionado = nome;
+            precoSelecionado = preco;
+            document.getElementById('check-prod').innerText = nome;
+            document.getElementById('checkout').style.display = 'block';
+        }
+
+        function fecharCheckout() {
+            document.getElementById('checkout').style.display = 'none';
+        }
+
+        function enviarPedido() {
+            const nome = document.getElementById('c-nome').value;
+            const loja = document.getElementById('c-loja').value;
+            const logo = document.getElementById('c-logo').value;
+            const dom = document.getElementById('c-com').value;
+
+            if(!nome || !loja) return alert("Preencha os campos obrigatórios!");
+
+            const msg = `*SOLICITAÇÃO DE PROJETO LOOP*%0A%0A` +
+                        `*Plano:* ${produtoSelecionado}%0A` +
+                        `*Preço Base:* R$ ${precoSelecionado}%0A%0A` +
+                        `*Cliente:* ${nome}%0A` +
+                        `*Negócio:* ${loja}%0A` +
+                        `*Tem Logo:* ${logo}%0A` +
+                        `*Domínio:* ${dom}`;
+
+            window.open(`https://wa.me/5554993243670?text=${msg}`, '_blank');
+        }
+    </script>
+    <script>
+        async function verificarDominio() {
+    const nomeOriginal = document.getElementById('domain-input').value.trim();
+    const tld = document.getElementById('tld-select').value;
+    const resultDiv = document.getElementById('domain-result');
+    const statusCard = document.getElementById('status-card');
+    const statusText = document.getElementById('status-text');
+    const btnReservar = document.getElementById('btn-reservar');
+
+    // Limpeza simples do nome (remove espaços e caracteres especiais)
+    const nome = nomeOriginal.toLowerCase().replace(/[^a-z0-9-]/g, '');
+
+    if (nome.length < 3) {
+        alert("Por favor, digite um nome válido (mínimo 3 caracteres).");
+        return;
+    }
+
+    const dominioCompleto = nome + tld;
+
+    // Interface em estado de busca
+    resultDiv.style.display = 'block';
+    statusText.innerHTML = `<i class="ph ph-circle-notch-bold"></i> Consultando base de dados real para <strong>${dominioCompleto}</strong>...`;
+    statusCard.style.background = "#f5f5f7";
+    btnReservar.style.display = 'none';
+
+    try {
+        // Usando o serviço RDAP (padrão sucessor do WHOIS)
+        // Nota: domínios .com.br usam caminhos diferentes, aqui tratamos de forma geral
+        const url = `https://rdap.org/domain/${dominioCompleto}`;
+        
+        const response = await fetch(url);
+
+        // Se o status for 404, significa que o domínio NÃO foi encontrado (está disponível!)
+        if (response.status === 404) {
+            statusText.innerHTML = `<i class="ph ph-check-circle" style="color: green;"></i> EXCELENTE! <strong>${dominioCompleto}</strong> está disponível para registro!`;
+            statusCard.style.background = "rgba(0, 255, 0, 0.05)";
+            statusCard.style.border = "1px solid rgba(0, 128, 0, 0.2)";
+            btnReservar.style.display = 'inline-block';
+        } 
+        // Se retornar 200, o domínio existe (está ocupado)
+        else if (response.ok) {
+            statusText.innerHTML = `<i class="ph ph-x-circle" style="color: red;"></i> INDISPONÍVEL! <strong>${dominioCompleto}</strong> já possui dono.`;
+            statusCard.style.background = "rgba(255, 0, 0, 0.05)";
+            statusCard.style.border = "1px solid rgba(255, 0, 0, 0.2)";
+            btnReservar.style.display = 'none';
+        }
+        else {
+            throw new Error();
+        }
+
+    } catch (error) {
+        // Caso a API falhe ou bloqueie (CORS), damos uma resposta segura
+        statusText.innerHTML = `<i class="ph ph-warning" style="color: orange;"></i> Não foi possível validar agora. <br> <small>Tente novamente ou nos chame no WhatsApp para checagem manual.</small>`;
+        btnReservar.style.display = 'inline-block';
+        btnReservar.innerText = "Consultar via WhatsApp";
+    }
+}
+    </script>
+</body>
+</html>
