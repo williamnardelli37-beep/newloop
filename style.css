@@ -68,12 +68,15 @@ body {
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Mantém Logo à esquerda e Links à direita */
     align-items: center;
     width: 100%;
     max-width: 1000px;
     padding: 0 24px;
 }
+
+/* Se você quiser que o menu fique totalmente centralizado agora que a busca saiu: */
+/* Altere o justify-content para 'center' e adicione um gap entre logo e links */
 
 .logo {
     font-size: 20px;
@@ -490,4 +493,5 @@ body {
     .timer-unit span { font-size: 32px; min-width: 50px; }
     .timer-divider { font-size: 24px; }
 }
+
         
