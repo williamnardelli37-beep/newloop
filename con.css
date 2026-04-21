@@ -490,4 +490,47 @@ body {
     .timer-unit span { font-size: 32px; min-width: 50px; }
     .timer-divider { font-size: 24px; }
 }
-        
+/* ANTI SCROLL LATERAL */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* IMAGENS */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* COUNTDOWN RESPONSIVO */
+.countdown-container-glass {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.timer-unit {
+    min-width: 60px;
+}
+
+/* GRID */
+.container-links {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .imagens img {
+        border-radius: 20px;
+    }
+
+    .bloco-card {
+        padding: 24px;
+    }
+
+}       

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Loop 26</title>
+    
+    <link rel="shortcut icon" href="loop web.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Estilos específicos para a página de contato para garantir o visual premium */
+        .contact-wrapper {
+            max-width: 1000px;
+            margin: 120px auto 80px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                margin-top: 80px;
+            }
+        }
+
+        .contact-info h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .contact-method {
+            margin-top: 40px;
+        }
+
+        .method-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .method-item i {
+            font-size: 24px;
+            color: #0071e3;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #86868b;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d2d2d7;
+            border-radius: 12px;
+            font-size: 16px;
+            background: #f5f5f7;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #0071e3;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
+        }
+
+        .btn-send {
+            background: #0071e3;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.3s;
+        }
+
+        .btn-send:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="apple-navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">Loop<span class="lev">Web</span></a>
+            <ul class="nav-links">
+                <li><a href="inovacao.html">Inovação</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <span class="ai-badge">Fale Conosco</span>
+                <h1>Como podemos ajudar?</h1>
+                <p>Tem alguma dúvida sobre o <strong>my iConnect</strong> ou quer iniciar um projeto com a Loop Creative? Nossa equipe está pronta para responder.</p>
+                
+                <div class="contact-method">
+                    <div class="method-item">
+                        <i class="ph ph-envelope"></i>
+                        <div>
+                            <strong>E-mail</strong>
+                            <p>contato@loopweb.com</p>
+                        </div>
+                    </div>
+                    <div class="method-item">
+                        <i class="ph ph-map-pin"></i>
+                        <div>
+                            <strong>Localização</strong>
+                            <p>São Paulo, Brasil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" placeholder="Ex: João Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail Corporativo</label>
+                        <input type="email" id="email" placeholder="nome@empresa.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" placeholder="Ex: Suporte my iConnect">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" rows="5" placeholder="Como podemos ajudar você hoje?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-send">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="apple-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>Copyright © 2026 Loop lev e loop creative. Todos os direitos reservados.</p>
+                <ul class="footer-mapa">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="privacidade.html">Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+@media (max-width: 768px) {
+    .container-products { gap: 20px; }
+    .product-card { padding: 40px 24px; }
+    .upgrade-container { padding: 40px 20px; }
+}
+
+        
