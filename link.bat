@@ -157,3 +157,8 @@ shutdown /r /t 0
 :hiberne
 rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 goto menu
+@REM ============================================================
+@REM    LOOP WEB BAT 2025-2026 SERVICE
+@REM    FRAMEWORK: LOOP 26 - AESTHETIC EDITION (OFFICIAL)
+@REM    DESCRIÇÃO: Design focado em Hiper-Minimalismo e Glassmorphism.
+@REM    ============================================================ 

@@ -47,3 +47,8 @@ function reservarDominio() {
     // Abre o WhatsApp com a mensagem pronta
     window.open(`https://wa.me/5554993243670?text=${encodeURIComponent(msg)}`, '_blank');
 }
+// // ============================================================
+//    LOOP WEB JAVA SCRIPT 2025-2026 SERVICE
+//    FRAMEWORK: LOOP 26 - AESTHETIC EDITION (OFFICIAL)
+//    DESCRIÇÃO: Design focado em Hiper-Minimalismo e Glassmorphism.
+//    ============================================================ 
