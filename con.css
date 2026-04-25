@@ -3,7 +3,7 @@
    ============================================================ */
 
 :root {
-    --apple-bg: #fbfbfd;
+    --apple-bg: #5FA8D3;
     --apple-text: #1d1d1f;
     --apple-gray: #6e6e73;
     --accent-blue: #0071e3;
@@ -472,7 +472,7 @@ body {
 
 /* Ajuste do Título para o Tema Claro */
 .hero-launch .gradient-text {
-    background: linear-gradient(to right, #1d1d1f, #42bff9, #0071e3, #1d1d1f);
+    background: linear-gradient(to right, #989a1f, #840ef2, #0071e3, #fb0404);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
