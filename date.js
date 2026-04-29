@@ -1,5 +1,5 @@
     // Define a data alvo: 10 de Maio de 2026 às 10:00:00
-    const targetDate = new Date("May 10, 2026 14:00:00").getTime();
+    const targetDate = new Date("May 15, 2026 14:00:00").getTime();
 
     const updateTimer = setInterval(() => {
         const now = new Date().getTime();
