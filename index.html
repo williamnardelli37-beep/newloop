@@ -1,257 +1,206 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manutenção Temporária</title>
-<link rel="shortcut icon" href="loop web.png" type="image/x-icon">
-
-<style>
-:root {
-    --apple-text: #1d1d1f;
-    --apple-gray: #6e6e73;
-    --apple-bg: #f5f5f7;
-    --accent-blue: #0071e3;
-}
-
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--apple-bg);
-}
-
-/* CONTAINER */
-.wrapper {
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px 20px;
-}
-
-/* GRID */
-.layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: center;
-}
-
-/* BOX */
-.maintenance-box {
-    background: #fff;
-    padding: 40px 25px;
-    border-radius: 24px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-/* PROPAGANDA */
-.ad-box {
-    background: #fff;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-/* IMAGEM */
-.ad-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* TEXTO */
-h1 {
-    font-size: clamp(28px, 5vw, 44px);
-    margin-bottom: 10px;
-}
-
-p {
-    color: var(--apple-gray);
-    font-size: 16px;
-}
-
-/* TIMER */
-.timer {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.time-box {
-    background: var(--apple-bg);
-    padding: 15px;
-    border-radius: 14px;
-    min-width: 75px;
-}
-
-.time {
-    font-size: 26px;
-    font-weight: bold;
-}
-
-.label {
-    font-size: 12px;
-    color: var(--apple-gray);
-}
-
-/* LOADER */
-.loader {
-    margin-top: 25px;
-    width: 38px;
-    height: 38px;
-    border: 4px solid #ddd;
-    border-top: 4px solid var(--accent-blue);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* =========================
-   MOBILE OTIMIZADO
-========================= */
-@media (max-width: 900px) {
-
-    .layout {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .maintenance-box {
-        padding: 30px 20px;
-    }
-
-    /* imagem com proporção bonita */
-    .ad-box {
-        height: 260px;
-    }
-
-    /* timer maior no celular */
-    .time {
-        font-size: 28px;
-    }
-
-    .time-box {
-        min-width: 80px;
-        padding: 16px;
-    }
-}
-
-/* TELAS PEQUENAS */
-@media (max-width: 480px) {
-
-    h1 {
-        font-size: 26px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    .timer {
-        gap: 10px;
-    }
-
-    .time-box {
-        min-width: 65px;
-        padding: 12px;
-    }
-
-    .time {
-        font-size: 22px;
-    }
-
-    .ad-box {
-        height: 220px;
-    }
-}
-</style>
+    <link rel="shortcut icon" href="loop web.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop 26 </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-
 <body>
+    
+    <nav class="apple-navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">Loop<span class="lev">Web</span></a>
+            <ul class="nav-links">
+                <li><a href="driver.html">sistema para Windows</a></li>
+                <li><a href="loop.html">Onde Comprar</a></li>
+                <li><a href="cone.html">my-iconnect</a></li>
+            </ul>
+    </nav>
 
-<div class="wrapper">
-    <div class="layout">
+        <section class="hero-top">
+            <div class="imagens">
+                <img src="Gemini_Generated_Image_gfzno5gfzno5gfzn 2.jpg" alt="Destaque">
+            </div>
+        <section>
+            <section class="one-more-thing">
+    <div class="omt-container">
+        <h1 class="gradient-text">One more thing...</h1>
+        <h2 class="sub-text">A new product, a new system.</h2>
+        <p class="description-text">O futuro do Loop Web acaba de chegar <span>my-connect</span></p>
+        <section>
+    </div>
+    <div style="display: flex; justify-content: center; background-image: url('sua-imagem-de-fundo.jpg'); padding: 50px;">
+    <a href="cone.html" class="apple-button-glass">Join Now to beta</a>
+</div>
+</section>
+<section class="instagram-promo">
+    <div class="insta-glass-card">
+        <div class="insta-content">
+            <i class="ph ph-instagram-logo"></i>
+            <span class="ai-badge">Social Connection</span>
+            <h2>Veja o futuro de perto.</h2>
+            <p>Siga-nos para conteúdos exclusivos sobre design, bastidores do Loop 26 e atualizações em tempo real.</p>
+            <a href="https://www.instagram.com/loopweb26/" target="_blank" class="insta-button">
+                <span>@loopweb26</span>
+            </a>
+    
+    
+        <div class="insta-visual">
+            <div class="circle-gradient"></div>
+        </div>
+    </div>
+</section>
+<section class="communication-section">
+    <div class="comm-glass-card">
 
-        <!-- MANUTENÇÃO -->
-        <div class="maintenance-box">
-            <h1>Estamos em manutenção temporária</h1>
+        <div class="comm-content">
+            
+            <!-- LOGO (imagem que você mandou) -->
+            <img src="https://media.base44.com/images/public/69f15caeffdd7da6f1d38adf/432562a0c_logo.png" alt="Comunicação inteligente" class="comm-logo">
+
+            <span class="ai-badge">Connect Hub</span>
+
+            <h2>Comunicação inteligente em tempo real.</h2>
+
             <p>
-                Correção de bugs e melhorias de segurança.<br>
-                Retorno estimado:
+                Entre em contato sem sair do site e automatize atendimentos,
+                solicitações e suporte em um só lugar.
             </p>
 
-            <div class="timer">
-                <div class="time-box">
-                    <div class="time" id="hours">00</div>
-                    <div class="label">Horas</div>
-                </div>
-                <div class="time-box">
-                    <div class="time" id="minutes">00</div>
-                    <div class="label">Min</div>
-                </div>
-                <div class="time-box">
-                    <div class="time" id="seconds">00</div>
-                    <div class="label">Seg</div>
-                </div>
-            </div>
+            <a href="https://my-connecthub.base44.app/" target="_blank" class="comm-button">
+                Solicitar serviços ou tirar dúvidas
+            </a>
 
-            <div class="loader"></div>
         </div>
 
-        <!-- PROPAGANDA -->
-        <div class="ad-box">
-
-            <!-- 🔥 COLOQUE SUA IMAGEM AQUI -->
-            <img src="Gemini_Generated_Image_gfzno5gfzno5gfzn 2.jpg" alt="iConnect">
-
+        <div class="comm-visual">
+            <div class="circle-gradient"></div>
         </div>
 
     </div>
-</div>
+</section>
+        <section class="hero-top">
+            <div class="imagens">
+                <img src="Captura de Tela 2026-04-25 às 10.24.30.png" alt="Destaque">
+            </div><br>
+        
+<div style="display: flex; justify-content: center; background-image: url('sua-imagem-de-fundo.jpg'); padding: 50px; ">
+    <a href="loop.html" class="apple-button-glass">Compre um site igual agora</a>
 
-<script>
-const duration = 4 * 60 * 60 * 1000;
-const STORAGE_KEY = "maintenance_end_time";
+</div><section id="ai-section" class="ai-experience">
+    <div class="ai-container">
+        <div class="ai-header">
+            <span class="ai-badge">Loop Intelligence</span>
+            <h2>IA que entende você. <br>Automação que liberta.</h2>
+            <p>Apresentamos o novo motor de processamento neural do Loop 26. Mais do que algoritmos, uma extensão da sua produtividade.</p>
+        </div>
 
-let endTime = localStorage.getItem(STORAGE_KEY);
+        <div class="container-links">
+            <div class="bloco-card ai-gradient-1">
+                <i class="ph ph-cpu"></i>
+                <h3>Processamento Local</h3>
+                <p>Sua privacidade em primeiro lugar. Nossa IA processa dados diretamente no seu dispositivo, sem nunca tocar na nuvem.</p>
+            </div>
 
-if (!endTime) {
-    endTime = Date.now() + duration;
-    localStorage.setItem(STORAGE_KEY, endTime);
-} else {
-    endTime = parseInt(endTime);
-}
+            <div class="bloco-card ai-gradient-2">
+                <i class="ph ph-magic-wand"></i>
+                <h3>Escrita Inteligente</h3>
+                <p>Resuma textos, ajuste o tom de e-mails e corrija códigos complexos com apenas um clique usando o Loop Assist.</p>
+            </div>
 
-function updateTimer() {
-    const now = Date.now();
-    let remaining = endTime - now;
+            <div class="bloco-card ai-gradient-3">
+                <i class="ph ph-intersect"></i>
+                <h3>Fluxos Automáticos</h3>
+                <p>Crie automações complexas entre seus apps favoritos sem escrever uma única linha de código.</p>
+            </div>
 
-    if (remaining <= 0) {
-        remaining = 0;
-        clearInterval(timerInterval);
-        document.querySelector("p").innerHTML =
-            "Sistema atualizado. Atualize a página.";
-        localStorage.removeItem(STORAGE_KEY);
-    }
+            <div class="bloco-card ai-gradient-4">
+                <i class="ph ph-shield-check"></i>
+                <h3>Segurança Preditiva</h3>
+                <p>Nossa automação monitora ameaças em tempo real e age antes mesmo que o problema aconteça.</p>
+            </div>
+        </div>
+    </div>
+</section>
+        <section class="grid-textos" style="padding: 100px 24px; background: var(--apple-bg);">
+    <div class="ai-header">
+        <span class="ai-badge">Portfólio</span>
+        <h2>Projetos em Destaque</h2>
+        <p>Soluções digitais que unem alta performance e estética minimalista.</p>
+    </div>
 
-    const hours = Math.floor(remaining / (1000 * 60 * 60));
-    const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+    <div class="container-links">
+        <div class="bloco-card">
+            <i class="ph ph-browser"></i>
+            <h3>Sebosoler.com</h3>
+            <p>Plataforma de e-commerce literário com foco em curadoria e experiência de leitura fluida.</p>
+            <br>
+            <a href="https://sebosoler.com" target="_blank" class="apple-button-glass" style="font-size: 14px; padding: 8px 20px;">Ver Projeto</a>
+        </div>
+        
+        <div class="bloco-card">
+            <i class="ph ph-browser"></i>
+            <h3>Seboonline.com</h3>
+            <p>Plataforma de e-commerce literário com foco em uma loja de livros localizada em Porto Alegre.</p>
+            <br>
+            <a href="https://seboonline.com/" target="_blank" class="apple-button-glass" style="font-size: 14px; padding: 8px 20px;">Ver Projeto</a>
+        </div>
 
-    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-}
+        <div class="bloco-card">
+            <i class="ph ph-crane"></i>
+            <h3>gmobrasconstrutora.com</h3>
+            <p>Landing page corporativa para o setor de engenharia civil, priorizando autoridade e clareza.</p>
+            <br>
+            <a href="https://gmobrasconstrutora.com/" class="apple-button-glass" style="font-size: 14px; padding: 8px 20px;">Ver Projeto</a>
+        </div>
 
-const timerInterval = setInterval(updateTimer, 1000);
-updateTimer();
-</script>
+        <div class="bloco-card">
+            <i class="ph ph-shopping-cart"></i>
+            <h3>Loop Store</h3>
+            <p>Conceito de loja integrada com o ecossistema Loop, focada em conversão e design premium.</p>
+            <br>
+            <a href="loop.html" class="apple-button-glass" style="font-size: 14px; padding: 8px 20px;">Ver Projeto</a>
+        </div>
 
+        <div class="bloco-card">
+            <i class="ph ph-layout"></i>
+            <h3>Inovação Constante</h3>
+            <p>Sistemas de dashboards de sitema Windows.</p>
+            <br>
+            <a href="driver.html" class="apple-button-glass" style="font-size: 14px; padding: 8px 20px;">Ver Projeto</a>
+        </div>
+    </div>
+</section>
+    </main>
+<br>
+   <footer class="apple-footer">
+    <div class="footer-container">
+        <div class="footer-brands">
+            <img src="loop web.png" alt="Logo Loop" class="footer-logo">
+         
+        </div>
+
+        <div class="footer-content">
+            <p>Copyright © 2026 Loop lev e loop creative. Todos os direitos reservados. </p>
+            <ul class="footer-mapa">
+                <li><a href="privacidade.html">Privacidade</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+   
+
+    <script src="ai-integration.js"></script>
 </body>
+<div class="edge-glow"></div>
 </html>
+<!-- ============================================================
+   LOOP WEB HTML 2025-2026 SERVICE
+   FRAMEWORK: LOOP 26 - AESTHETIC EDITION (OFFICIAL)
+   DESCRIÇÃO: Design focado em Hiper-Minimalismo e Glassmorphism.
+   ============================================================  -->
